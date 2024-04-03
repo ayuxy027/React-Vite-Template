@@ -1,23 +1,20 @@
 import React, { useState } from "react";
+import Component from "./Component"; // Import the Component component
 
 function App() {
-  const [a, setA] = useState(40);
+  const [a, fnA] = useState(0);
+
   function clickFunction() {
-    setA(a + 1);
+    fnA(a + 1);
   }
 
   return (
-    <div className="w-full h-screen text-center bg-slate-700">
-      <h1 className="text-5xl text-center text-fuchsia-700">
-        Tailwind works if this is centered - {a}
-      </h1>
-      <button
-        className="rounded hover:bg-red-500 bg-yellow-500 font-md text-xl p-[12px] m-5"
-        onClick={clickFunction}
-      >
-        Click Here
-      </button>
-    </div>
+    <>
+      <div className="w-full h-screen bg-slate-600">
+        <Component a={a} clickFunction={clickFunction} />{" "}
+        {/* Use the Component component */}
+      </div>
+    </>
   );
 }
 
