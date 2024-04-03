@@ -1,19 +1,18 @@
 import React, { useState } from "react";
 
 function App() {
-  const [a, setA] = useState(40); // Corrected usage of useState
-
+  const [a, setA] = useState(40);
   function clickFunction() {
-    setA(41); // Update state using the setter function
+    setA(a + 1);
   }
 
   return (
-    <div className="bg-slate-700 text-center h-screen w-full">
-      <h1 className="text-5xl text-fuchsia-700 text-center">
+    <div className="w-full h-screen text-center bg-slate-700">
+      <h1 className="text-5xl text-center text-fuchsia-700">
         Tailwind works if this is centered - {a}
       </h1>
       <button
-        className="rounded hover:bg-red-500 bg-yellow-500 font-md text-xl"
+        className="rounded hover:bg-red-500 bg-yellow-500 font-md text-xl p-[12px] m-5"
         onClick={clickFunction}
       >
         Click Here
